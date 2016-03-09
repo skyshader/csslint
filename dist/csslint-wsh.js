@@ -9495,10 +9495,10 @@ CSSLint.addRule({
              * @return rule source as {String}
              */
             var generateSource = function(rule) {
-                if (!rule || !("name" in rule)) {
+                if (!rule || !("id" in rule)) {
                     return "";
                 }
-                return "net.csslint." + rule.name.replace(/\s/g, "");
+                return "net.csslint." + rule.id;
             };
 
 
