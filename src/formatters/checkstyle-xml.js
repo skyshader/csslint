@@ -85,7 +85,7 @@
                 if (!rule || !("id" in rule)) {
                     return "";
                 }
-                return rule.id.replace(/\s/g, "");
+                return rule.id;
             };
 
 
@@ -96,7 +96,7 @@
                     //ignore rollups for now
                     if (!message.rollup) {
                         output.push("<error line=\"" + message.line + "\" column=\"" + message.col + "\" severity=\"" + message.type + "\"" +
-                          " message=\"" + xmlEscape(message.message) + "\" source=\"" + generateSource(message.rule) +"\"/>");
+                          " message=\"" + xmlEscape(message.message) + "\" source=\"" + message.rule.id +"\"/>");
                     }
                 });
                 output.push("</file>");
